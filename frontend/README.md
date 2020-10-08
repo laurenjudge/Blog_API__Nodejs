@@ -1,12 +1,6 @@
-Created with Vue, Node, Express and MongoDB
-
 # frontend
 
 ## Project setup
-```
-cd frontend
-```
-
 ```
 npm install
 ```
@@ -21,18 +15,10 @@ npm run serve
 npm run build
 ```
 
-# backend
-
-## Project setup
+### Lints and fixes files
 ```
-cd backend
+npm run lint
 ```
 
-```
-npm install
-```
-
-### Run the server using nodemon
-```
-npm run start:server
-```
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
