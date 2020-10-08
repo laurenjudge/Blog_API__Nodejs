@@ -1,17 +1,20 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+
 const app = express();
 
-const articleRouter = require('./routes/articles');
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(cors());
 
-app.use('/articles', articleRouter);
 
-app.use('/', (req, res) => {
-  const articles =[{
-    title: 'Test Article',
-    createdAt: Date.now(),
-    description: 'Test desc'
-  }]
-  res.send(articles)
-})
+const posts = require('./routes/posts');
 
-app.listen(3000);
+app.use('/posts', posts);
+
+
+const port = process.env.PORT || 3000
+
+app.listen(port, () => console.log(`Server running on ${port}`));
